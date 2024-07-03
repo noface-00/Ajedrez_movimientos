@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Main;
-import java.awt.Color;
+
+import java.awt.*;
 import javax.swing.*;
 
 
@@ -12,7 +13,6 @@ import javax.swing.*;
  * @author mkevi
  */
 public class GUI extends javax.swing.JFrame {
-    public String[][]tablero;
     
     /**
      * Creates new form GUI
@@ -32,72 +32,71 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        B8 = new javax.swing.JButton();
+        Tablero = new javax.swing.JPanel();
         A8 = new javax.swing.JButton();
-        D8 = new javax.swing.JButton();
+        B8 = new javax.swing.JButton();
         C8 = new javax.swing.JButton();
-        F8 = new javax.swing.JButton();
+        D8 = new javax.swing.JButton();
         E8 = new javax.swing.JButton();
-        H8 = new javax.swing.JButton();
+        F8 = new javax.swing.JButton();
         G8 = new javax.swing.JButton();
-        B7 = new javax.swing.JButton();
+        H8 = new javax.swing.JButton();
         A7 = new javax.swing.JButton();
-        D7 = new javax.swing.JButton();
+        B7 = new javax.swing.JButton();
         C7 = new javax.swing.JButton();
-        F7 = new javax.swing.JButton();
+        D7 = new javax.swing.JButton();
         E7 = new javax.swing.JButton();
-        H7 = new javax.swing.JButton();
+        F7 = new javax.swing.JButton();
         G7 = new javax.swing.JButton();
-        B6 = new javax.swing.JButton();
+        H7 = new javax.swing.JButton();
         A6 = new javax.swing.JButton();
-        D6 = new javax.swing.JButton();
+        B6 = new javax.swing.JButton();
         C6 = new javax.swing.JButton();
-        F6 = new javax.swing.JButton();
+        D6 = new javax.swing.JButton();
         E6 = new javax.swing.JButton();
-        H6 = new javax.swing.JButton();
+        F6 = new javax.swing.JButton();
         G6 = new javax.swing.JButton();
-        B5 = new javax.swing.JButton();
+        H6 = new javax.swing.JButton();
         A5 = new javax.swing.JButton();
-        D5 = new javax.swing.JButton();
+        B5 = new javax.swing.JButton();
         C5 = new javax.swing.JButton();
-        F5 = new javax.swing.JButton();
+        D5 = new javax.swing.JButton();
         E5 = new javax.swing.JButton();
-        H5 = new javax.swing.JButton();
+        F5 = new javax.swing.JButton();
         G5 = new javax.swing.JButton();
-        B4 = new javax.swing.JButton();
+        H5 = new javax.swing.JButton();
         A4 = new javax.swing.JButton();
-        D4 = new javax.swing.JButton();
+        B4 = new javax.swing.JButton();
         C4 = new javax.swing.JButton();
-        F4 = new javax.swing.JButton();
+        D4 = new javax.swing.JButton();
         E4 = new javax.swing.JButton();
-        H4 = new javax.swing.JButton();
+        F4 = new javax.swing.JButton();
         G4 = new javax.swing.JButton();
-        B3 = new javax.swing.JButton();
+        H4 = new javax.swing.JButton();
         A3 = new javax.swing.JButton();
-        D3 = new javax.swing.JButton();
+        B3 = new javax.swing.JButton();
         C3 = new javax.swing.JButton();
-        F3 = new javax.swing.JButton();
+        D3 = new javax.swing.JButton();
         E3 = new javax.swing.JButton();
-        H3 = new javax.swing.JButton();
+        F3 = new javax.swing.JButton();
         G3 = new javax.swing.JButton();
-        B2 = new javax.swing.JButton();
+        H3 = new javax.swing.JButton();
         A2 = new javax.swing.JButton();
-        D2 = new javax.swing.JButton();
+        B2 = new javax.swing.JButton();
         C2 = new javax.swing.JButton();
-        F2 = new javax.swing.JButton();
+        D2 = new javax.swing.JButton();
         E2 = new javax.swing.JButton();
-        H2 = new javax.swing.JButton();
+        F2 = new javax.swing.JButton();
         G2 = new javax.swing.JButton();
-        B1 = new javax.swing.JButton();
+        H2 = new javax.swing.JButton();
         A1 = new javax.swing.JButton();
-        D1 = new javax.swing.JButton();
+        B1 = new javax.swing.JButton();
         C1 = new javax.swing.JButton();
-        F1 = new javax.swing.JButton();
+        D1 = new javax.swing.JButton();
         E1 = new javax.swing.JButton();
-        H1 = new javax.swing.JButton();
+        F1 = new javax.swing.JButton();
         G1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        H1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -112,116 +111,234 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
-        getContentPane().add(B8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 30, 30));
-        getContentPane().add(A8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 30, 30));
-        getContentPane().add(D8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 30, 30));
-        getContentPane().add(C8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 30, 30));
-        getContentPane().add(F8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 30, 30));
-        getContentPane().add(E8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 30, 30));
 
+        Tablero.setLayout(new java.awt.GridLayout(8, 8));
+
+        A8.setBackground(new java.awt.Color(255, 255, 255));
+        A8.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(A8);
+
+        B8.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(B8);
+
+        C8.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(C8);
+
+        D8.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(D8);
+
+        E8.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(E8);
+
+        F8.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(F8);
+
+        G8.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(G8);
+
+        H8.setForeground(new java.awt.Color(0, 0, 0));
         H8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 H8ActionPerformed(evt);
             }
         });
-        getContentPane().add(H8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 30, 30));
-        getContentPane().add(G8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 30, 30));
-        getContentPane().add(B7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 30, 30));
-        getContentPane().add(A7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 30, 30));
+        Tablero.add(H8);
 
+        A7.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(A7);
+
+        B7.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(B7);
+
+        C7.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(C7);
+
+        D7.setForeground(new java.awt.Color(0, 0, 0));
         D7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 D7ActionPerformed(evt);
             }
         });
-        getContentPane().add(D7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 30, 30));
-        getContentPane().add(C7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 30, 30));
-        getContentPane().add(F7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 30, 30));
-        getContentPane().add(E7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 30, 30));
-        getContentPane().add(H7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 30, 30));
+        Tablero.add(D7);
 
+        E7.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(E7);
+
+        F7.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(F7);
+
+        G7.setForeground(new java.awt.Color(0, 0, 0));
         G7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 G7ActionPerformed(evt);
             }
         });
-        getContentPane().add(G7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 30, 30));
-        getContentPane().add(B6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 30, 30));
-        getContentPane().add(A6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 30, 30));
-        getContentPane().add(D6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 30, 30));
-        getContentPane().add(C6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 30, 30));
-        getContentPane().add(F6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 30, 30));
-        getContentPane().add(E6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 30, 30));
-        getContentPane().add(H6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, 30, 30));
+        Tablero.add(G7);
 
+        H7.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(H7);
+
+        A6.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(A6);
+
+        B6.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(B6);
+
+        C6.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(C6);
+
+        D6.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(D6);
+
+        E6.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(E6);
+
+        F6.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(F6);
+
+        G6.setForeground(new java.awt.Color(0, 0, 0));
         G6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 G6ActionPerformed(evt);
             }
         });
-        getContentPane().add(G6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, 30, 30));
-        getContentPane().add(B5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 30, 30));
-        getContentPane().add(A5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 30, 30));
-        getContentPane().add(D5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 30, 30));
-        getContentPane().add(C5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 30, 30));
-        getContentPane().add(F5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 30, 30));
-        getContentPane().add(E5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 30, 30));
-        getContentPane().add(H5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 30, 30));
-        getContentPane().add(G5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 190, 30, 30));
-        getContentPane().add(B4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 30, 30));
-        getContentPane().add(A4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 30, 30));
-        getContentPane().add(D4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 30, 30));
-        getContentPane().add(C4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 30, 30));
-        getContentPane().add(F4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 30, 30));
-        getContentPane().add(E4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 30, 30));
-        getContentPane().add(H4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 30, 30));
-        getContentPane().add(G4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, 30, 30));
-        getContentPane().add(B3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 30, 30));
-        getContentPane().add(A3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 30, 30));
-        getContentPane().add(D3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 30, 30));
-        getContentPane().add(C3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 30, 30));
-        getContentPane().add(F3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 30, 30));
-        getContentPane().add(E3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 30, 30));
-        getContentPane().add(H3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 30, 30));
+        Tablero.add(G6);
 
+        H6.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(H6);
+
+        A5.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(A5);
+
+        B5.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(B5);
+
+        C5.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(C5);
+
+        D5.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(D5);
+
+        E5.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(E5);
+
+        F5.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(F5);
+
+        G5.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(G5);
+
+        H5.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(H5);
+
+        A4.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(A4);
+
+        B4.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(B4);
+
+        C4.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(C4);
+
+        D4.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(D4);
+
+        E4.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(E4);
+
+        F4.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(F4);
+
+        G4.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(G4);
+
+        H4.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(H4);
+
+        A3.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(A3);
+
+        B3.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(B3);
+
+        C3.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(C3);
+
+        D3.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(D3);
+
+        E3.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(E3);
+
+        F3.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(F3);
+
+        G3.setForeground(new java.awt.Color(0, 0, 0));
         G3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 G3ActionPerformed(evt);
             }
         });
-        getContentPane().add(G3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 30, 30));
-        getContentPane().add(B2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 30, 30));
-        getContentPane().add(A2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 30, 30));
-        getContentPane().add(D2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 30, 30));
-        getContentPane().add(C2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 30, 30));
-        getContentPane().add(F2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 30, 30));
-        getContentPane().add(E2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, 30, 30));
-        getContentPane().add(H2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 310, 30, 30));
-        getContentPane().add(G2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 30, 30));
-        getContentPane().add(B1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 30, 30));
-        getContentPane().add(A1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 30, 30));
-        getContentPane().add(D1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 30, 30));
-        getContentPane().add(C1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 30, 30));
-        getContentPane().add(F1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 30, 30));
-        getContentPane().add(E1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 30, 30));
-        getContentPane().add(H1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 350, 30, 30));
-        getContentPane().add(G1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, 30, 30));
+        Tablero.add(G3);
 
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
+        H3.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(H3);
 
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, -1, -1));
+        A2.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(A2);
+
+        B2.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(B2);
+
+        C2.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(C2);
+
+        D2.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(D2);
+
+        E2.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(E2);
+
+        F2.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(F2);
+
+        G2.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(G2);
+
+        H2.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(H2);
+
+        A1.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(A1);
+
+        B1.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(B1);
+
+        C1.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(C1);
+
+        D1.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(D1);
+
+        E1.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(E1);
+
+        F1.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(F1);
+
+        G1.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(G1);
+
+        H1.setForeground(new java.awt.Color(0, 0, 0));
+        Tablero.add(H1);
+
+        getContentPane().add(Tablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 440, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        for(int i = 0; i < tablero.length;i++){
-            for(int j = 0; j < tablero.length;j++){
-                
-            }
-        }
+
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void D7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D7ActionPerformed
@@ -247,30 +364,9 @@ public class GUI extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(
-    String args[]) {    String[][] Tablero = new String[8][8];
-    JButton[][] Botones = new JButton[8][8];
-    String[] pos_tablero = {"A", "B", "C", "D", "E", "F", "G", "H"};
-    
+    public static void main(String args[]) {    
 
-        // Inicializar y añadir cada botón al marco
-        for (int col = 0; col < pos_tablero.length; col++) {
-            int count = 1;
-            for (int row = 0; row < 8; row++) {
-                Botones[row][col] = new JButton(pos_tablero[col] + count);
-                //frame.add(Botones[row][col]); // Añadir el botón al marco
-                count++;
-            }
-        }
-
-        // Cambiar el color de fondo y el color del texto de cada botón
-        for (int col = 0; col < pos_tablero.length; col++) {
-            for (int row = 0; row < 8; row++) {
-                Botones[row][col].setBackground(Color.BLUE); // Color de fondo
-                Botones[row][col].setForeground(Color.WHITE); // Color del texto
-            }
-        }
-    
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -297,32 +393,28 @@ public class GUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUI().setVisible(true);
+                    GUI gui = new GUI();
+    gui.setVisible(true);
+    String[][] Movimientos = new String[8][8];
+    JButton[][] matrizBotones = new JButton[8][8];
+    Component[] componentes = gui.Tablero.getComponents();
+    int index = 0;
+
+    for (int fila = 0; fila < 8; fila++) {
+        for (int columna = 0; columna < 8; columna++) {
+            matrizBotones[fila][columna] = (JButton) componentes[index];
+            index++;
+        }
+    }
+        for (int fila = 0; fila < 8; fila++) {
+            for (int columna = 0; columna < 8; columna++) {
+                matrizBotones[fila][columna].setText("A");
+        }
+    }
             }
         });
     }
-     private void initializeButtonArray() {
-        // Initialize the 2D array with the buttons already present in your JFrame
-        botones = new JButton[8][8];
-
-        String[] rows = {"A", "B", "C", "D", "E", "F", "G", "H"};
-        for (int i = 0; i < rows.length; i++) {
-            for (int j = 0; j < rows.length; j++) {
-                try {
-                    // Construct the field name dynamically
-                    String fieldName = rows[i] + (8 - j);
-                    // Get the field using reflection
-                    Field field = getClass().getDeclaredField(fieldName);
-                    // Make sure the field is accessible
-                    field.setAccessible(true);
-                    // Assign the button to the array
-                    botones[j][i] = (JButton) field.get(this);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton A1;
     private javax.swing.JButton A2;
@@ -388,9 +480,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton H6;
     private javax.swing.JButton H7;
     private javax.swing.JButton H8;
+    private javax.swing.JPanel Tablero;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
