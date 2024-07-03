@@ -13,8 +13,8 @@ public class Ajedrez {
         int alfil_row = 3;
         int alfil_col = 2;
 
-        tablero[alfil_row][alfil_col] = "A";
-        int[][] movimientos_alfil = peon_mov(tablero, alfil_row, alfil_col);
+        tablero[alfil_row][alfil_col] = "T";
+        int[][] movimientos_alfil = torre_mov(tablero, alfil_row, alfil_col);
 
         for (int[] movimiento : movimientos_alfil) {
             int fila = movimiento[0];
