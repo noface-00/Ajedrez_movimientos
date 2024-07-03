@@ -13,12 +13,14 @@ import javax.swing.*;
  * @author mkevi
  */
 public class GUI extends javax.swing.JFrame {
+    static JButton[][] matrizBotones;
     
     /**
      * Creates new form GUI
      */
     public GUI() {
         initComponents();
+        inicializarMatrizBotones();
     }
 
     /**
@@ -31,7 +33,7 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Fichas = new javax.swing.JComboBox<>();
         Tablero = new javax.swing.JPanel();
         A8 = new javax.swing.JButton();
         B8 = new javax.swing.JButton();
@@ -104,17 +106,17 @@ public class GUI extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dama", "Rey", "Torre", "Alfil", "Caballo", "Peon" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        Fichas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Dama", "Rey", "Torre", "Alfil", "Caballo", "Peon" }));
+        Fichas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                FichasActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
+        getContentPane().add(Fichas, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, -1, -1));
 
         Tablero.setLayout(new java.awt.GridLayout(8, 8));
 
-        A8.setBackground(new java.awt.Color(255, 255, 255));
+        A8.setBackground(new java.awt.Color(102, 102, 102));
         A8.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(A8);
 
@@ -336,10 +338,101 @@ public class GUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+        
+    public GUI(JButton A1, JButton A2, JButton A3, JButton A4, JButton A5, JButton A6, JButton A7, JButton A8, JButton B1, JButton B2, JButton B3, JButton B4, JButton B5, JButton B6, JButton B7, JButton B8, JButton C1, JButton C2, JButton C3, JButton C4, JButton C5, JButton C6, JButton C7, JButton C8, JButton D1, JButton D2, JButton D3, JButton D4, JButton D5, JButton D6, JButton D7, JButton D8, JButton E1, JButton E2, JButton E3, JButton E4, JButton E5, JButton E6, JButton E7, JButton E8, JButton F1, JButton F2, JButton F3, JButton F4, JButton F5, JButton F6, JButton F7, JButton F8, JComboBox<String> Fichas, JButton G1, JButton G2, JButton G3, JButton G4, JButton G5, JButton G6, JButton G7, JButton G8, JButton H1, JButton H2, JButton H3, JButton H4, JButton H5, JButton H6, JButton H7, JButton H8, JPanel Tablero, JLabel jLabel1) throws HeadlessException {
+        this.A1 = A1;
+        this.A2 = A2;
+        this.A3 = A3;
+        this.A4 = A4;
+        this.A5 = A5;
+        this.A6 = A6;
+        this.A7 = A7;
+        this.A8 = A8;
+        this.B1 = B1;
+        this.B2 = B2;
+        this.B3 = B3;
+        this.B4 = B4;
+        this.B5 = B5;
+        this.B6 = B6;
+        this.B7 = B7;
+        this.B8 = B8;
+        this.C1 = C1;
+        this.C2 = C2;
+        this.C3 = C3;
+        this.C4 = C4;
+        this.C5 = C5;
+        this.C6 = C6;
+        this.C7 = C7;
+        this.C8 = C8;
+        this.D1 = D1;
+        this.D2 = D2;
+        this.D3 = D3;
+        this.D4 = D4;
+        this.D5 = D5;
+        this.D6 = D6;
+        this.D7 = D7;
+        this.D8 = D8;
+        this.E1 = E1;
+        this.E2 = E2;
+        this.E3 = E3;
+        this.E4 = E4;
+        this.E5 = E5;
+        this.E6 = E6;
+        this.E7 = E7;
+        this.E8 = E8;
+        this.F1 = F1;
+        this.F2 = F2;
+        this.F3 = F3;
+        this.F4 = F4;
+        this.F5 = F5;
+        this.F6 = F6;
+        this.F7 = F7;
+        this.F8 = F8;
+        this.Fichas = Fichas;
+        this.G1 = G1;
+        this.G2 = G2;
+        this.G3 = G3;
+        this.G4 = G4;
+        this.G5 = G5;
+        this.G6 = G6;
+        this.G7 = G7;
+        this.G8 = G8;
+        this.H1 = H1;
+        this.H2 = H2;
+        this.H3 = H3;
+        this.H4 = H4;
+        this.H5 = H5;
+        this.H6 = H6;
+        this.H7 = H7;
+        this.H8 = H8;
+        this.Tablero = Tablero;
+        this.jLabel1 = jLabel1;
+    }
+    
+    private void inicializarMatrizBotones() {
+        matrizBotones = new JButton[8][8];
+        Component[] componentes = Tablero.getComponents();
+        int index = 0;
+        for (int fila = 0; fila < 8; fila++) {
+            for (int columna = 0; columna < 8; columna++) {
+                matrizBotones[fila][columna] = (JButton) componentes[index];
+                index++;
+            }
+        }
+    }
+    private void FichasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FichasActionPerformed
+        Color color_tablero = new Color (255, 255, 255);
+        String Item = (String) Fichas.getSelectedItem();
+        if(Item.equals("Dama")){
+            color_tablero = Color.BLACK;
+        }
+        
+                for (int fila = 0; fila < 8; fila++) {
+                    for (int columna = 0; columna < 8; columna++) {
+                        matrizBotones[fila][columna].setBackground(color_tablero);
+                    }
+                }
+    }//GEN-LAST:event_FichasActionPerformed
 
     private void D7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D7ActionPerformed
         // TODO add your handling code here:
@@ -393,24 +486,8 @@ public class GUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                    GUI gui = new GUI();
-    gui.setVisible(true);
-    String[][] Movimientos = new String[8][8];
-    JButton[][] matrizBotones = new JButton[8][8];
-    Component[] componentes = gui.Tablero.getComponents();
-    int index = 0;
+                new GUI().setVisible(true);
 
-    for (int fila = 0; fila < 8; fila++) {
-        for (int columna = 0; columna < 8; columna++) {
-            matrizBotones[fila][columna] = (JButton) componentes[index];
-            index++;
-        }
-    }
-        for (int fila = 0; fila < 8; fila++) {
-            for (int columna = 0; columna < 8; columna++) {
-                matrizBotones[fila][columna].setText("A");
-        }
-    }
             }
         });
     }
@@ -464,6 +541,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton F6;
     private javax.swing.JButton F7;
     private javax.swing.JButton F8;
+    private javax.swing.JComboBox<String> Fichas;
     private javax.swing.JButton G1;
     private javax.swing.JButton G2;
     private javax.swing.JButton G3;
@@ -481,7 +559,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton H7;
     private javax.swing.JButton H8;
     private javax.swing.JPanel Tablero;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
