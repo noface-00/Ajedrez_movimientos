@@ -14,7 +14,7 @@ public class Ajedrez {
         int alfil_col = 2;
 
         tablero[alfil_row][alfil_col] = "T";
-        int[][] movimientos_alfil = torre_mov(tablero, alfil_row, alfil_col);
+        int[][] movimientos_alfil = caballo_mov(tablero, alfil_row, alfil_col);
 
         for (int[] movimiento : movimientos_alfil) {
             int fila = movimiento[0];
@@ -67,7 +67,6 @@ public class Ajedrez {
                 { -1, 2 },
                 { 2, -1 },
                 { 2, 1 } };
-        int[][] direcciones_vertical = { { 0, -1 }, { -1, 0 }, { 1, 0 }, { 0, 1 } };
         int[][] movimientos = new int[64][2];
         int count = 0;
 
@@ -93,28 +92,7 @@ public class Ajedrez {
             }
 
         }
-        for (int[] direccion : direcciones_vertical) {
-            int fila = row;
-            int columna = col;
-            int contador = 0;
-            while (true) {
-                fila += direccion[0];
-                columna += direccion[1];
-                if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8 && contador < 2) {
-                    if (tablero[fila][columna] == null) {
-                        movimientos[count][0] = fila;
-                        movimientos[count][1] = columna;
-                        count++;
-                    } else {
-                        break;
-                    }
-                } else {
-                    break;
-                }
-                contador++;
-            }
 
-        }
         int[][] movimientos_v = new int[count][2];
         for (int i = 0; i < count; i++) {
             movimientos_v[i][0] = movimientos[i][0];

@@ -5,6 +5,8 @@
 package Main;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 
@@ -409,29 +411,81 @@ public class GUI extends javax.swing.JFrame {
         this.jLabel1 = jLabel1;
     }
     
-    private void inicializarMatrizBotones() {
-        matrizBotones = new JButton[8][8];
-        Component[] componentes = Tablero.getComponents();
-        int index = 0;
-        for (int fila = 0; fila < 8; fila++) {
-            for (int columna = 0; columna < 8; columna++) {
-                matrizBotones[fila][columna] = (JButton) componentes[index];
-                index++;
-            }
+private void inicializarMatrizBotones() {
+    matrizBotones = new JButton[8][8];
+    Component[] componentes = Tablero.getComponents();
+    int index = 0;
+    for (int fila = 0; fila < 8; fila++) {
+        for (int columna = 0; columna < 8; columna++) {
+            matrizBotones[fila][columna] = (JButton) componentes[index];
+            index++;
+            
+            final int f = fila;  // Crear variables finales para las filas y columnas actuales
+            final int c = columna;
+            
+            matrizBotones[fila][columna].addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    // Lógica para manejar la acción cuando se pulsa un botón
+                    System.out.println("Boton en fila " + f + ", columna " + c + " fue pulsado.");
+
+                    // Aquí puedes añadir la lógica específica para cada botón
+                    if (f == 0 && c == 0) {
+                        // Lógica para el botón en la esquina superior izquierda (A1)
+                        System.out.println("Lógica específica para el botón (0, 0)");
+                    } else if (f == 1 && c == 0) {
+                        // Lógica para el botón en la segunda fila, primera columna (A2)
+                        System.out.println("Lógica específica para el botón (1, 0)");
+                    }
+                    // Y así sucesivamente para otros botones según sus posiciones
+                }
+            });
         }
     }
+}
+
     private void FichasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FichasActionPerformed
-        Color color_tablero = new Color (255, 255, 255);
-        String Item = (String) Fichas.getSelectedItem();
-        if(Item.equals("Dama")){
-            color_tablero = Color.BLACK;
+         Color color_tablero = new Color(255, 255, 255);
+    String item = (String) Fichas.getSelectedItem();
+    if (item.equals("Dama")) {
+        color_tablero = Color.BLACK;
+    }
+    
+    // Limpiar colores anteriores
+    for (int fila = 0; fila < 8; fila++) {
+        for (int columna = 0; columna < 8; columna++) {
+            matrizBotones[fila][columna].setBackground(color_tablero);
         }
-        
-                for (int fila = 0; fila < 8; fila++) {
-                    for (int columna = 0; columna < 8; columna++) {
-                        matrizBotones[fila][columna].setBackground(color_tablero);
-                    }
-                }
+    }
+    
+    int[][] movimientos = new int[0][2];
+    
+    // Obtener los movimientos según la pieza seleccionada
+    switch(item) {
+        case "Dama":
+            movimientos = dama_mov(new String[8][8], 3, 3); // Cambia las coordenadas según la posición deseada
+            break;
+        case "Peon":
+            movimientos = peon_mov(new String[8][8], 3, 3); // Agrega la función peon_mov con lógica específica
+            break;
+        case "Caballo":
+            movimientos = caballo_mov(new String[8][8], 3, 3);
+            break;
+        case "Alfil":
+            movimientos = alfil_mov(new String[8][8], 3, 3);
+            break;
+        case "Rey":
+            movimientos = rey_mov(new String[8][8], 3, 3); // Agrega la función rey_mov con lógica específica
+            break;
+        case "Torre":
+            movimientos = torre_mov(new String[8][8], 3, 3);
+            break;
+    }
+    
+    // Marcar posibles movimientos en el tablero
+    for (int[] movimiento : movimientos) {
+        matrizBotones[movimiento[0]][movimiento[1]].setBackground(Color.GREEN);
+    }
     }//GEN-LAST:event_FichasActionPerformed
 
     private void D7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D7ActionPerformed
@@ -454,6 +508,229 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_H8ActionPerformed
 
+    public static int[][] alfil_mov(String[][] tablero, int row, int col) {
+        int[][] direcciones = { { -1, -1 }, { -1, 1 }, { 1, -1 }, { 1, 1 } };
+        int[][] movimientos = new int[64][2];
+        int count = 0;
+
+        for (int[] direccion : direcciones) {
+            int fila = row;
+            int columna = col;
+
+            while (true) {
+                fila += direccion[0];
+                columna += direccion[1];
+                if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
+                    if (tablero[fila][columna] == null) {
+                        movimientos[count][0] = fila;
+                        movimientos[count][1] = columna;
+                        count++;
+                    } else {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+        int[][] movimientos_v = new int[count][2];
+        for (int i = 0; i < count; i++) {
+            movimientos_v[i][0] = movimientos[i][0];
+            movimientos_v[i][1] = movimientos[i][1];
+        }
+        return movimientos_v;
+    }
+
+        public static int[][] caballo_mov(String[][] tablero, int row, int col) {
+        int[][] direcciones_saltos = { { -2, -1 },
+                { -2, 1 },
+                { 1, -2 },
+                { 1, 2 },
+                { -1, -2 },
+                { -1, 2 },
+                { 2, -1 },
+                { 2, 1 } };
+        int[][] movimientos = new int[64][2];
+        int count = 0;
+
+        for (int[] direccion : direcciones_saltos) {
+            int fila = row;
+            int columna = col;
+
+            while (true) {
+                fila += direccion[0];
+                columna += direccion[1];
+                if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
+                    if (tablero[fila][columna] == null) {
+                        movimientos[count][0] = fila;
+                        movimientos[count][1] = columna;
+                        count++;
+                        break;
+                    } else {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            }
+
+        }
+
+        int[][] movimientos_v = new int[count][2];
+        for (int i = 0; i < count; i++) {
+            movimientos_v[i][0] = movimientos[i][0];
+            movimientos_v[i][1] = movimientos[i][1];
+        }
+        return movimientos_v;
+    }
+
+    public static int[][] torre_mov(String[][] tablero, int row, int col) {
+        int[][] direcciones = { { -1, 0 }, { 0, 1 }, { 0, -1 }, { 1, 0 } };
+        int[][] movimientos = new int[64][2];
+        int count = 0;
+
+        for (int[] direccion : direcciones) {
+            int fila = row;
+            int columna = col;
+
+            while (true) {
+                fila += direccion[0];
+                columna += direccion[1];
+                if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
+                    if (tablero[fila][columna] == null) {
+                        movimientos[count][0] = fila;
+                        movimientos[count][1] = columna;
+                        count++;
+                    } else {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+        int[][] movimientos_v = new int[count][2];
+        for (int i = 0; i < count; i++) {
+            movimientos_v[i][0] = movimientos[i][0];
+            movimientos_v[i][1] = movimientos[i][1];
+        }
+        return movimientos_v;
+    }
+
+    public static int[][] dama_mov(String[][] tablero, int row, int col) {
+
+        int[][] direcciones = { { -1, -1 }, { -1, 1 }, { 1, -1 }, { 1, 1 }, { -1, 0 }, { 0, 1 }, { 0, -1 }, { 1, 0 } };
+        int[][] movimientos = new int[64][2];
+        int count = 0;
+
+        for (int[] direccion : direcciones) {
+            int fila = row;
+            int columna = col;
+
+            while (true) {
+                fila += direccion[0];
+                columna += direccion[1];
+                if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
+                    if (tablero[fila][columna] == null) {
+                        movimientos[count][0] = fila;
+                        movimientos[count][1] = columna;
+                        count++;
+                    } else {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+        int[][] movimientos_v = new int[count][2];
+        for (int i = 0; i < count; i++) {
+            movimientos_v[i][0] = movimientos[i][0];
+            movimientos_v[i][1] = movimientos[i][1];
+        }
+        return movimientos_v;
+    }
+
+    public static int[][] rey_mov(String[][] tablero, int row, int col) {
+
+        int[][] direcciones = { { -1, -1 }, { -1, 1 }, { 1, -1 }, { 1, 1 }, { -1, 0 }, { 0, 1 }, { 0, -1 }, { 1, 0 } };
+        int[][] movimientos = new int[64][2];
+        int count = 0;
+
+        for (int[] direccion : direcciones) {
+            int fila = row;
+            int columna = col;
+
+            while (true) {
+                fila += direccion[0];
+                columna += direccion[1];
+                if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
+                    if (tablero[fila][columna] == null) {
+                        movimientos[count][0] = fila;
+                        movimientos[count][1] = columna;
+                        count++;
+                        break;
+                    } else {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+        int[][] movimientos_v = new int[count][2];
+        for (int i = 0; i < count; i++) {
+            movimientos_v[i][0] = movimientos[i][0];
+            movimientos_v[i][1] = movimientos[i][1];
+        }
+        return movimientos_v;
+    }
+
+    public static int[][] peon_mov(String[][] tablero, int row, int col) {
+
+        int[][] movimientos = new int[64][2];
+        int count = 0;
+
+        int fila = row;
+        int columna = col;
+
+        while (true) {
+            fila += -1;
+            columna += 0;
+            if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
+                if (tablero[fila][columna] == null) {
+                    movimientos[count][0] = fila;
+                    movimientos[count][1] = columna;
+                    count++;
+                    break;
+                } else {
+                    break;
+                }
+            } else {
+                break;
+            }
+        }
+        int[][] movimientos_v = new int[count][2];
+        for (int i = 0; i < count; i++) {
+            movimientos_v[i][0] = movimientos[i][0];
+            movimientos_v[i][1] = movimientos[i][1];
+        }
+        return movimientos_v;
+    }
+
+    public static void imprimirTablero(String[][] tablero) {
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                if (tablero[i][j] == null) {
+                    System.out.print(". ");
+                } else {
+                    System.out.print(tablero[i][j] + " ");
+                }
+            }
+            System.out.println();
+        }
+    } 
+    
     /**
      * @param args the command line arguments
      */
