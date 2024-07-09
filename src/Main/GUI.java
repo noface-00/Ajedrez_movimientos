@@ -119,221 +119,99 @@ public class GUI extends javax.swing.JFrame {
         Tablero.setLayout(new java.awt.GridLayout(8, 8));
 
         A8.setBackground(new java.awt.Color(102, 102, 102));
-        A8.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(A8);
-
-        B8.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(B8);
-
-        C8.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(C8);
-
-        D8.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(D8);
-
-        E8.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(E8);
-
-        F8.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(F8);
-
-        G8.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(G8);
 
-        H8.setForeground(new java.awt.Color(0, 0, 0));
         H8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 H8ActionPerformed(evt);
             }
         });
         Tablero.add(H8);
-
-        A7.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(A7);
-
-        B7.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(B7);
-
-        C7.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(C7);
 
-        D7.setForeground(new java.awt.Color(0, 0, 0));
         D7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 D7ActionPerformed(evt);
             }
         });
         Tablero.add(D7);
-
-        E7.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(E7);
-
-        F7.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(F7);
 
-        G7.setForeground(new java.awt.Color(0, 0, 0));
         G7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 G7ActionPerformed(evt);
             }
         });
         Tablero.add(G7);
-
-        H7.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(H7);
-
-        A6.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(A6);
-
-        B6.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(B6);
-
-        C6.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(C6);
-
-        D6.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(D6);
-
-        E6.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(E6);
-
-        F6.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(F6);
 
-        G6.setForeground(new java.awt.Color(0, 0, 0));
         G6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 G6ActionPerformed(evt);
             }
         });
         Tablero.add(G6);
-
-        H6.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(H6);
-
-        A5.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(A5);
-
-        B5.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(B5);
-
-        C5.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(C5);
-
-        D5.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(D5);
-
-        E5.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(E5);
-
-        F5.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(F5);
-
-        G5.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(G5);
-
-        H5.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(H5);
-
-        A4.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(A4);
-
-        B4.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(B4);
-
-        C4.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(C4);
-
-        D4.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(D4);
-
-        E4.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(E4);
-
-        F4.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(F4);
-
-        G4.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(G4);
-
-        H4.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(H4);
-
-        A3.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(A3);
-
-        B3.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(B3);
-
-        C3.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(C3);
-
-        D3.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(D3);
-
-        E3.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(E3);
-
-        F3.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(F3);
 
-        G3.setForeground(new java.awt.Color(0, 0, 0));
         G3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 G3ActionPerformed(evt);
             }
         });
         Tablero.add(G3);
-
-        H3.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(H3);
-
-        A2.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(A2);
-
-        B2.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(B2);
-
-        C2.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(C2);
-
-        D2.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(D2);
-
-        E2.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(E2);
-
-        F2.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(F2);
-
-        G2.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(G2);
-
-        H2.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(H2);
-
-        A1.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(A1);
-
-        B1.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(B1);
-
-        C1.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(C1);
-
-        D1.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(D1);
-
-        E1.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(E1);
-
-        F1.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(F1);
-
-        G1.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(G1);
-
-        H1.setForeground(new java.awt.Color(0, 0, 0));
         Tablero.add(H1);
 
         getContentPane().add(Tablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 440, 410));
@@ -341,6 +219,7 @@ public class GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
         
+   
     public GUI(JButton A1, JButton A2, JButton A3, JButton A4, JButton A5, JButton A6, JButton A7, JButton A8, JButton B1, JButton B2, JButton B3, JButton B4, JButton B5, JButton B6, JButton B7, JButton B8, JButton C1, JButton C2, JButton C3, JButton C4, JButton C5, JButton C6, JButton C7, JButton C8, JButton D1, JButton D2, JButton D3, JButton D4, JButton D5, JButton D6, JButton D7, JButton D8, JButton E1, JButton E2, JButton E3, JButton E4, JButton E5, JButton E6, JButton E7, JButton E8, JButton F1, JButton F2, JButton F3, JButton F4, JButton F5, JButton F6, JButton F7, JButton F8, JComboBox<String> Fichas, JButton G1, JButton G2, JButton G3, JButton G4, JButton G5, JButton G6, JButton G7, JButton G8, JButton H1, JButton H2, JButton H3, JButton H4, JButton H5, JButton H6, JButton H7, JButton H8, JPanel Tablero, JLabel jLabel1) throws HeadlessException {
         this.A1 = A1;
         this.A2 = A2;
@@ -410,82 +289,78 @@ public class GUI extends javax.swing.JFrame {
         this.Tablero = Tablero;
         this.jLabel1 = jLabel1;
     }
+  
     
+ /*Inicializa la matriz de botones que representa el tablero*/
 private void inicializarMatrizBotones() {
-    matrizBotones = new JButton[8][8];
-    Component[] componentes = Tablero.getComponents();
+    matrizBotones = new JButton[8][8]; // Matriz de botones de 8x8 para el tablero
+    Component[] componentes = Tablero.getComponents(); // Obtiene los componentes del contenedor Tablero
     int index = 0;
+    
+    // Recorre cada fila y columna para asignar los botones y sus ActionListener
     for (int fila = 0; fila < 8; fila++) {
         for (int columna = 0; columna < 8; columna++) {
-            matrizBotones[fila][columna] = (JButton) componentes[index];
+            matrizBotones[fila][columna] = (JButton) componentes[index]; // Asigna el botón correspondiente
             index++;
             
-            final int f = fila;  // Crear variables finales para las filas y columnas actuales
-            final int c = columna;
+            final int f = fila; // Fila final para ActionListener
+            final int c = columna; // Columna final para ActionListener
             
+            // ActionListener para cada botón que resalta los movimientos de la pieza seleccionada
             matrizBotones[fila][columna].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    // Lógica para manejar la acción cuando se pulsa un botón
                     System.out.println("Boton en fila " + f + ", columna " + c + " fue pulsado.");
-
-                    // Aquí puedes añadir la lógica específica para cada botón
-                    if (f == 0 && c == 0) {
-                        // Lógica para el botón en la esquina superior izquierda (A1)
-                        System.out.println("Lógica específica para el botón (0, 0)");
-                    } else if (f == 1 && c == 0) {
-                        // Lógica para el botón en la segunda fila, primera columna (A2)
-                        System.out.println("Lógica específica para el botón (1, 0)");
-                    }
-                    // Y así sucesivamente para otros botones según sus posiciones
+                    String pieza = (String) Fichas.getSelectedItem(); // Obtiene el tipo de pieza seleccionada
+                    resaltarMovimientos(pieza, f, c); // Resalta los movimientos posibles para esa pieza en esa posición
                 }
             });
         }
     }
 }
-
-    private void FichasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FichasActionPerformed
-         Color color_tablero = new Color(255, 255, 255);
-    String item = (String) Fichas.getSelectedItem();
-    if (item.equals("Dama")) {
-        color_tablero = Color.BLACK;
-    }
+/*Muestra los movimientos validos de cada ficha*/
+private void resaltarMovimientos(String pieza, int fila, int columna) {
     
-    // Limpiar colores anteriores
-    for (int fila = 0; fila < 8; fila++) {
-        for (int columna = 0; columna < 8; columna++) {
-            matrizBotones[fila][columna].setBackground(color_tablero);
+    Color color_tablero = new Color(255, 255, 255); //tablero se pone en color blanco
+    
+    for (int f = 0; f < 8; f++) { //Pone en blanco todos los botones
+        for (int c = 0; c < 8; c++) {
+            matrizBotones[f][c].setBackground(color_tablero);
         }
     }
     
-    int[][] movimientos = new int[0][2];
+    int[][] movimientos = new int[0][2]; //matriz para almacenar los movimientos posibles
     
-    // Obtener los movimientos según la pieza seleccionada
-    switch(item) {
+     //De acuerdo a la pieza seleccionada valida sus movimientos
+    switch(pieza) {
         case "Dama":
-            movimientos = dama_mov(new String[8][8], 3, 3); // Cambia las coordenadas según la posición deseada
+            movimientos = dama_mov(new String[8][8], fila, columna);
             break;
         case "Peon":
-            movimientos = peon_mov(new String[8][8], 3, 3); // Agrega la función peon_mov con lógica específica
+            movimientos = peon_mov(new String[8][8], fila, columna);
             break;
         case "Caballo":
-            movimientos = caballo_mov(new String[8][8], 3, 3);
+            movimientos = caballo_mov(new String[8][8], fila, columna);
             break;
         case "Alfil":
-            movimientos = alfil_mov(new String[8][8], 3, 3);
+            movimientos = alfil_mov(new String[8][8], fila, columna);
             break;
         case "Rey":
-            movimientos = rey_mov(new String[8][8], 3, 3); // Agrega la función rey_mov con lógica específica
+            movimientos = rey_mov(new String[8][8], fila, columna);
             break;
         case "Torre":
-            movimientos = torre_mov(new String[8][8], 3, 3);
+            movimientos = torre_mov(new String[8][8], fila, columna);
             break;
     }
     
-    // Marcar posibles movimientos en el tablero
+     //Muestra los movimientos pintando en verde los botones disponibles
     for (int[] movimiento : movimientos) {
         matrizBotones[movimiento[0]][movimiento[1]].setBackground(Color.GREEN);
     }
+}
+
+    private void FichasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FichasActionPerformed
+        resetearBotones();
     }//GEN-LAST:event_FichasActionPerformed
 
     private void D7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D7ActionPerformed
@@ -508,228 +383,300 @@ private void inicializarMatrizBotones() {
         // TODO add your handling code here:
     }//GEN-LAST:event_H8ActionPerformed
 
-    public static int[][] alfil_mov(String[][] tablero, int row, int col) {
-        int[][] direcciones = { { -1, -1 }, { -1, 1 }, { 1, -1 }, { 1, 1 } };
-        int[][] movimientos = new int[64][2];
-        int count = 0;
+   public static int[][] alfil_mov(String[][] tablero, int fila, int columna) {
+    // Direcciones en las que puede moverse el alfil: diagonalmente en las cuatro direcciones
+    int[][] direcciones = { { -1, -1 }, { -1, 1 }, { 1, -1 }, { 1, 1 } };
+    
+    // Matriz para almacenar todos los posibles movimientos del alfil, inicialmente con capacidad máxima
+    int[][] movimientos = new int[64][2];
+    int count = 0; // Contador de movimientos válidos
+    
+    // Para cada dirección diagonal posible
+    for (int[] direccion : direcciones) {
+        int f = fila;
+        int c = columna;
 
-        for (int[] direccion : direcciones) {
-            int fila = row;
-            int columna = col;
-
-            while (true) {
-                fila += direccion[0];
-                columna += direccion[1];
-                if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
-                    if (tablero[fila][columna] == null) {
-                        movimientos[count][0] = fila;
-                        movimientos[count][1] = columna;
-                        count++;
-                    } else {
-                        break;
-                    }
-                } else {
-                    break;
-                }
-            }
-        }
-        int[][] movimientos_v = new int[count][2];
-        for (int i = 0; i < count; i++) {
-            movimientos_v[i][0] = movimientos[i][0];
-            movimientos_v[i][1] = movimientos[i][1];
-        }
-        return movimientos_v;
-    }
-
-        public static int[][] caballo_mov(String[][] tablero, int row, int col) {
-        int[][] direcciones_saltos = { { -2, -1 },
-                { -2, 1 },
-                { 1, -2 },
-                { 1, 2 },
-                { -1, -2 },
-                { -1, 2 },
-                { 2, -1 },
-                { 2, 1 } };
-        int[][] movimientos = new int[64][2];
-        int count = 0;
-
-        for (int[] direccion : direcciones_saltos) {
-            int fila = row;
-            int columna = col;
-
-            while (true) {
-                fila += direccion[0];
-                columna += direccion[1];
-                if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
-                    if (tablero[fila][columna] == null) {
-                        movimientos[count][0] = fila;
-                        movimientos[count][1] = columna;
-                        count++;
-                        break;
-                    } else {
-                        break;
-                    }
-                } else {
-                    break;
-                }
-            }
-
-        }
-
-        int[][] movimientos_v = new int[count][2];
-        for (int i = 0; i < count; i++) {
-            movimientos_v[i][0] = movimientos[i][0];
-            movimientos_v[i][1] = movimientos[i][1];
-        }
-        return movimientos_v;
-    }
-
-    public static int[][] torre_mov(String[][] tablero, int row, int col) {
-        int[][] direcciones = { { -1, 0 }, { 0, 1 }, { 0, -1 }, { 1, 0 } };
-        int[][] movimientos = new int[64][2];
-        int count = 0;
-
-        for (int[] direccion : direcciones) {
-            int fila = row;
-            int columna = col;
-
-            while (true) {
-                fila += direccion[0];
-                columna += direccion[1];
-                if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
-                    if (tablero[fila][columna] == null) {
-                        movimientos[count][0] = fila;
-                        movimientos[count][1] = columna;
-                        count++;
-                    } else {
-                        break;
-                    }
-                } else {
-                    break;
-                }
-            }
-        }
-        int[][] movimientos_v = new int[count][2];
-        for (int i = 0; i < count; i++) {
-            movimientos_v[i][0] = movimientos[i][0];
-            movimientos_v[i][1] = movimientos[i][1];
-        }
-        return movimientos_v;
-    }
-
-    public static int[][] dama_mov(String[][] tablero, int row, int col) {
-
-        int[][] direcciones = { { -1, -1 }, { -1, 1 }, { 1, -1 }, { 1, 1 }, { -1, 0 }, { 0, 1 }, { 0, -1 }, { 1, 0 } };
-        int[][] movimientos = new int[64][2];
-        int count = 0;
-
-        for (int[] direccion : direcciones) {
-            int fila = row;
-            int columna = col;
-
-            while (true) {
-                fila += direccion[0];
-                columna += direccion[1];
-                if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
-                    if (tablero[fila][columna] == null) {
-                        movimientos[count][0] = fila;
-                        movimientos[count][1] = columna;
-                        count++;
-                    } else {
-                        break;
-                    }
-                } else {
-                    break;
-                }
-            }
-        }
-        int[][] movimientos_v = new int[count][2];
-        for (int i = 0; i < count; i++) {
-            movimientos_v[i][0] = movimientos[i][0];
-            movimientos_v[i][1] = movimientos[i][1];
-        }
-        return movimientos_v;
-    }
-
-    public static int[][] rey_mov(String[][] tablero, int row, int col) {
-
-        int[][] direcciones = { { -1, -1 }, { -1, 1 }, { 1, -1 }, { 1, 1 }, { -1, 0 }, { 0, 1 }, { 0, -1 }, { 1, 0 } };
-        int[][] movimientos = new int[64][2];
-        int count = 0;
-
-        for (int[] direccion : direcciones) {
-            int fila = row;
-            int columna = col;
-
-            while (true) {
-                fila += direccion[0];
-                columna += direccion[1];
-                if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
-                    if (tablero[fila][columna] == null) {
-                        movimientos[count][0] = fila;
-                        movimientos[count][1] = columna;
-                        count++;
-                        break;
-                    } else {
-                        break;
-                    }
-                } else {
-                    break;
-                }
-            }
-        }
-        int[][] movimientos_v = new int[count][2];
-        for (int i = 0; i < count; i++) {
-            movimientos_v[i][0] = movimientos[i][0];
-            movimientos_v[i][1] = movimientos[i][1];
-        }
-        return movimientos_v;
-    }
-
-    public static int[][] peon_mov(String[][] tablero, int row, int col) {
-
-        int[][] movimientos = new int[64][2];
-        int count = 0;
-
-        int fila = row;
-        int columna = col;
-
+        // Avanza en la dirección mientras los movimientos sean válidos dentro del tablero
         while (true) {
-            fila += -1;
-            columna += 0;
-            if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
-                if (tablero[fila][columna] == null) {
-                    movimientos[count][0] = fila;
-                    movimientos[count][1] = columna;
+            f += direccion[0];
+            c += direccion[1];
+            
+            // Verifica si la nueva posición está dentro de los límites del tablero
+            if (f >= 0 && f < 8 && c >= 0 && c < 8) {
+                // Si la casilla está vacía (null), es un movimiento válido
+                if (tablero[f][c] == null) {
+                    movimientos[count][0] = f;
+                    movimientos[count][1] = c;
+                    count++;
+                } else {
+                    break; // Si encuentra una pieza enemiga o aliada, se detiene en esa dirección
+                }
+            } else {
+                break; // Si se sale de los límites del tablero, se detiene en esa dirección
+            }
+        }
+    }
+    
+    // Crea una matriz de movimientos válidos con el tamaño exacto necesario
+    int[][] movimientos_validos = new int[count][2];
+    
+    // Copia los movimientos válidos encontrados al arreglo de tamaño exacto
+    for (int i = 0; i < count; i++) {
+        movimientos_validos[i][0] = movimientos[i][0];
+        movimientos_validos[i][1] = movimientos[i][1];
+    }
+    
+    return movimientos_validos; // Devuelve la matriz de movimientos válidos del alfil
+}
+
+public static int[][] caballo_mov(String[][] tablero, int fila, int columna) {
+    // Direcciones de los saltos posibles del caballo
+    int[][] direcciones_saltos = {
+        {-2, -1}, {-2, 1}, // Dos filas arriba y una columna a la izquierda/derecha
+        {2, -1}, {2, 1},   // Dos filas abajo y una columna a la izquierda/derecha
+        {-1, -2}, {-1, 2}, // Una fila arriba/abajo y dos columnas a la izquierda/derecha
+        {1, -2}, {1, 2}    // Una fila abajo/arriba y dos columnas a la izquierda/derecha
+    };
+    
+    // Matriz para almacenar todos los posibles movimientos del caballo, inicialmente con capacidad máxima
+    int[][] movimientos = new int[64][2];
+    int count = 0; // Contador de movimientos válidos
+    
+    // Para cada dirección de salto posible del caballo
+    for (int[] direccion : direcciones_saltos) {
+        int f = fila;
+        int c = columna;
+
+        // Calcula la nueva posición después del salto
+        f += direccion[0];
+        c += direccion[1];
+        
+        // Verifica si la nueva posición está dentro de los límites del tablero y es una casilla vacía
+        if (f >= 0 && f < 8 && c >= 0 && c < 8 && tablero[f][c] == null) {
+            // Almacena el movimiento válido en la matriz de movimientos
+            movimientos[count][0] = f;
+            movimientos[count][1] = c;
+            count++;
+        }
+    }
+    
+    // Crea una matriz de movimientos válidos con el tamaño exacto necesario
+    int[][] movimientos_validos = new int[count][2];
+    
+    // Copia los movimientos válidos encontrados al arreglo de tamaño exacto
+    for (int i = 0; i < count; i++) {
+        movimientos_validos[i][0] = movimientos[i][0];
+        movimientos_validos[i][1] = movimientos[i][1];
+    }
+    
+    return movimientos_validos; // Devuelve la matriz de movimientos válidos del caballo
+}
+
+ public static int[][] torre_mov(String[][] tablero, int fila, int columna) {
+    // Direcciones en las que puede moverse la torre (vertical y horizontal)
+    int[][] direcciones = {
+        {-1, 0}, // Arriba
+        {0, 1},  // Derecha
+        {0, -1}, // Izquierda
+        {1, 0}   // Abajo
+    };
+    
+    // Matriz para almacenar todos los posibles movimientos de la torre, inicialmente con capacidad máxima
+    int[][] movimientos = new int[64][2];
+    int count = 0; // Contador de movimientos válidos
+    
+    // Para cada dirección de movimiento posible de la torre
+    for (int[] direccion : direcciones) {
+        int f = fila;
+        int c = columna;
+
+        // Mueve en la dirección actual mientras esté dentro de los límites del tablero
+        while (true) {
+            f += direccion[0];
+            c += direccion[1];
+            
+            // Verifica si la nueva posición está dentro de los límites del tablero y es una casilla vacía
+            if (f >= 0 && f < 8 && c >= 0 && c < 8) {
+                if (tablero[f][c] == null) {
+                    // Almacena el movimiento válido en la matriz de movimientos
+                    movimientos[count][0] = f;
+                    movimientos[count][1] = c;
+                    count++;
+                } else {
+                    break; // Rompe el bucle si encuentra una pieza en la trayectoria
+                }
+            } else {
+                break; // Rompe el bucle si se sale de los límites del tablero
+            }
+        }
+    }
+    
+    // Crea una matriz de movimientos válidos con el tamaño exacto necesario
+    int[][] movimientos_validos = new int[count][2];
+    
+    // Copia los movimientos válidos encontrados al arreglo de tamaño exacto
+    for (int i = 0; i < count; i++) {
+        movimientos_validos[i][0] = movimientos[i][0];
+        movimientos_validos[i][1] = movimientos[i][1];
+    }
+    
+    return movimientos_validos; // Devuelve la matriz de movimientos válidos de la torre
+}
+
+ public static int[][] dama_mov(String[][] tablero, int fila, int columna) {
+    // Direcciones en las que puede moverse la dama (diagonales y rectas)
+    int[][] direcciones = {
+        {-1, -1}, // Diagonal superior izquierda
+        {-1, 1},  // Diagonal superior derecha
+        {1, -1},  // Diagonal inferior izquierda
+        {1, 1},   // Diagonal inferior derecha
+        {-1, 0},  // Arriba
+        {0, 1},   // Derecha
+        {0, -1},  // Izquierda
+        {1, 0}    // Abajo
+    };
+    
+    // Matriz para almacenar todos los posibles movimientos de la dama, inicialmente con capacidad máxima
+    int[][] movimientos = new int[64][2];
+    int count = 0; // Contador de movimientos válidos
+    
+    // Para cada dirección de movimiento posible de la dama
+    for (int[] direccion : direcciones) {
+        int f = fila;
+        int c = columna;
+
+        // Mueve en la dirección actual mientras esté dentro de los límites del tablero
+        while (true) {
+            f += direccion[0];
+            c += direccion[1];
+            
+            // Verifica si la nueva posición está dentro de los límites del tablero y es una casilla vacía
+            if (f >= 0 && f < 8 && c >= 0 && c < 8) {
+                if (tablero[f][c] == null) {
+                    // Almacena el movimiento válido en la matriz de movimientos
+                    movimientos[count][0] = f;
+                    movimientos[count][1] = c;
+                    count++;
+                } else {
+                    break; // Rompe el bucle si encuentra una pieza en la trayectoria
+                }
+            } else {
+                break; // Rompe el bucle si se sale de los límites del tablero
+            }
+        }
+    }
+    
+    // Crea una matriz de movimientos válidos con el tamaño exacto necesario
+    int[][] movimientos_validos = new int[count][2];
+    
+    // Copia los movimientos válidos encontrados al arreglo de tamaño exacto
+    for (int i = 0; i < count; i++) {
+        movimientos_validos[i][0] = movimientos[i][0];
+        movimientos_validos[i][1] = movimientos[i][1];
+    }
+    
+    return movimientos_validos; // Devuelve la matriz de movimientos válidos de la dama
+}
+
+ public static int[][] rey_mov(String[][] tablero, int fila, int columna) {
+    // Direcciones en las que puede moverse el rey (diagonales y rectas)
+    int[][] direcciones = {
+        {-1, -1}, // Diagonal superior izquierda
+        {-1, 1},  // Diagonal superior derecha
+        {1, -1},  // Diagonal inferior izquierda
+        {1, 1},   // Diagonal inferior derecha
+        {-1, 0},  // Arriba
+        {0, 1},   // Derecha
+        {0, -1},  // Izquierda
+        {1, 0}    // Abajo
+    };
+    
+    // Matriz para almacenar todos los posibles movimientos del rey, inicialmente con capacidad máxima
+    int[][] movimientos = new int[64][2];
+    int count = 0; // Contador de movimientos válidos
+    
+    // Para cada dirección de movimiento posible del rey
+    for (int[] direccion : direcciones) {
+        int f = fila;
+        int c = columna;
+
+        // Mueve en la dirección actual mientras esté dentro de los límites del tablero
+        while (true) {
+            f += direccion[0];
+            c += direccion[1];
+            
+            // Verifica si la nueva posición está dentro de los límites del tablero y es una casilla vacía
+            if (f >= 0 && f < 8 && c >= 0 && c < 8) {
+                if (tablero[f][c] == null) {
+                    // Almacena el movimiento válido en la matriz de movimientos
+                    movimientos[count][0] = f;
+                    movimientos[count][1] = c;
                     count++;
                     break;
                 } else {
-                    break;
+                    break; // Rompe el bucle si encuentra una pieza en la trayectoria
                 }
             } else {
-                break;
+                break; // Rompe el bucle si se sale de los límites del tablero
             }
         }
-        int[][] movimientos_v = new int[count][2];
-        for (int i = 0; i < count; i++) {
-            movimientos_v[i][0] = movimientos[i][0];
-            movimientos_v[i][1] = movimientos[i][1];
+    }
+    
+    // Crea una matriz de movimientos válidos con el tamaño exacto necesario
+    int[][] movimientos_validos = new int[count][2];
+    
+    // Copia los movimientos válidos encontrados al arreglo de tamaño exacto
+    for (int i = 0; i < count; i++) {
+        movimientos_validos[i][0] = movimientos[i][0];
+        movimientos_validos[i][1] = movimientos[i][1];
+    }
+    
+    return movimientos_validos; // Devuelve la matriz de movimientos válidos del rey
+}
+
+    public static int[][] peon_mov(String[][] tablero, int fila, int columna) {
+    // Matriz para almacenar todos los posibles movimientos del peón, inicialmente con capacidad máxima
+    int[][] movimientos = new int[64][2];
+    int count = 0; // Contador de movimientos válidos
+
+    // Mueve el peón una casilla hacia adelante (hacia arriba en la matriz, dependiendo de la implementación)
+    fila += -1;
+    columna += 0;
+
+    // Verifica si la nueva posición está dentro de los límites del tablero y es una casilla vacía
+    if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
+        if (tablero[fila][columna] == null) {
+            // Almacena el movimiento válido en la matriz de movimientos
+            movimientos[count][0] = fila;
+            movimientos[count][1] = columna;
+            count++;
         }
-        return movimientos_v;
     }
 
+    // Crea una matriz de movimientos válidos con el tamaño exacto necesario
+    int[][] movimientos_validos = new int[count][2];
+
+    // Copia los movimientos válidos encontrados al arreglo de tamaño exacto
+    for (int i = 0; i < count; i++) {
+        movimientos_validos[i][0] = movimientos[i][0];
+        movimientos_validos[i][1] = movimientos[i][1];
+    }
+
+    return movimientos_validos; // Devuelve la matriz de movimientos válidos del peón
+}
+
     public static void imprimirTablero(String[][] tablero) {
-        for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero[i].length; j++) {
-                if (tablero[i][j] == null) {
-                    System.out.print(". ");
-                } else {
-                    System.out.print(tablero[i][j] + " ");
-                }
+    for (int i = 0; i < tablero.length; i++) {
+        for (int j = 0; j < tablero[i].length; j++) {
+            if (tablero[i][j] == null) {
+                System.out.print(". "); // Imprime un punto para casillas vacías
+            } else {
+                System.out.print(tablero[i][j] + " "); // Imprime el contenido de la casilla
             }
-            System.out.println();
         }
-    } 
+        System.out.println(); // Salto de línea al final de cada fila del tablero
+    }
+}
     
     /**
      * @param args the command line arguments
@@ -768,6 +715,13 @@ private void inicializarMatrizBotones() {
             }
         });
     }
+    private void resetearBotones() {
+    for (int fila = 0; fila < 8; fila++) {
+        for (int columna = 0; columna < 8; columna++) {
+            matrizBotones[fila][columna].setBackground(Color.WHITE);
+        }
+    }
+}
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton A1;
