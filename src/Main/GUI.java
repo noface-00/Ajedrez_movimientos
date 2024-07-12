@@ -16,8 +16,8 @@ import javax.swing.*;
  */
 public class GUI extends javax.swing.JFrame {
     static JButton[][] matrizBotones;
-    private boolean init;
-    
+    boolean peoncheck=false;
+    boolean alfilcheck=false;
     
     /**
      * Creates new form GUI
@@ -25,6 +25,23 @@ public class GUI extends javax.swing.JFrame {
     public GUI() {
         initComponents();
         inicializarMatrizBotones();
+           Color color1 = Color.WHITE; // Color de la primera casilla
+            Color color2 = Color.BLACK; // Color de la segunda casilla
+
+            for (int f = 0; f < 8; f++) {
+           for (int c = 0; c < 8; c++) {
+             // Omitir cambiar el color de A2
+             if (!(f == 0 && c == 1)) {
+            // Determina el color basado en la paridad de la suma de f y c
+            if ((f + c) % 2 == 0) {
+                matrizBotones[f][c].setBackground(color1); // Casilla de color 1
+            } else {
+                matrizBotones[f][c].setBackground(color2); // Casilla de color 2
+                B8.setBackground(Color.BLACK);
+                }
+                 }
+            }
+            }   
     }
 
     /**
@@ -36,8 +53,6 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        Fichas = new javax.swing.JComboBox<>();
         Tablero = new javax.swing.JPanel();
         A8 = new javax.swing.JButton();
         B8 = new javax.swing.JButton();
@@ -61,6 +76,7 @@ public class GUI extends javax.swing.JFrame {
         D6 = new javax.swing.JButton();
         E6 = new javax.swing.JButton();
         F6 = new javax.swing.JButton();
+        F5 = new javax.swing.JButton();
         G6 = new javax.swing.JButton();
         H6 = new javax.swing.JButton();
         A5 = new javax.swing.JButton();
@@ -68,7 +84,6 @@ public class GUI extends javax.swing.JFrame {
         C5 = new javax.swing.JButton();
         D5 = new javax.swing.JButton();
         E5 = new javax.swing.JButton();
-        F5 = new javax.swing.JButton();
         G5 = new javax.swing.JButton();
         H5 = new javax.swing.JButton();
         A4 = new javax.swing.JButton();
@@ -103,25 +118,16 @@ public class GUI extends javax.swing.JFrame {
         F1 = new javax.swing.JButton();
         G1 = new javax.swing.JButton();
         H1 = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        Fichas = new javax.swing.JComboBox<>();
+        ChkBoxColor = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
-
-        Fichas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Dama", "Rey", "Torre", "Alfil", "Caballo", "Peon Blanco", "Peon Negro" }));
-        Fichas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FichasActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Fichas, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, -1, -1));
-
         Tablero.setLayout(new java.awt.GridLayout(8, 8));
-
-        A8.setBackground(new java.awt.Color(102, 102, 102));
         Tablero.add(A8);
         Tablero.add(B8);
         Tablero.add(C8);
@@ -162,6 +168,7 @@ public class GUI extends javax.swing.JFrame {
         Tablero.add(D6);
         Tablero.add(E6);
         Tablero.add(F6);
+        Tablero.add(F5);
 
         G6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,7 +182,6 @@ public class GUI extends javax.swing.JFrame {
         Tablero.add(C5);
         Tablero.add(D5);
         Tablero.add(E5);
-        Tablero.add(F5);
         Tablero.add(G5);
         Tablero.add(H5);
         Tablero.add(A4);
@@ -217,15 +223,62 @@ public class GUI extends javax.swing.JFrame {
         Tablero.add(G1);
         Tablero.add(H1);
 
-        getContentPane().add(Tablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 440, 410));
+        getContentPane().add(Tablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 410));
 
-        jToggleButton1.setText("jToggleButton1");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.setBackground(new java.awt.Color(255, 128, 36));
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic", 2, 18)); // NOI18N
+        jLabel1.setText("Piezas de ajedrez");
+
+        Fichas.setBackground(new java.awt.Color(255, 153, 102));
+        Fichas.setFont(new java.awt.Font("Yu Gothic Medium", 1, 12)); // NOI18N
+        Fichas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Peon ", "Alfil", "Caballo", "Torre", "Dama", "Rey", " ", " " }));
+        Fichas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                FichasActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, -1, -1));
+
+        ChkBoxColor.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
+        ChkBoxColor.setText("Cambiar color");
+        ChkBoxColor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChkBoxColorActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Fichas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(ChkBoxColor, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 40, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Fichas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(ChkBoxColor, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 220, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -314,6 +367,7 @@ private void inicializarMatrizBotones() {
             matrizBotones[fila][columna] = (JButton) componentes[index]; // Asigna el botón correspondiente
             index++;
             
+            
             final int f = fila; // Fila final para ActionListener
             final int c = columna; // Columna final para ActionListener
             
@@ -332,34 +386,46 @@ private void inicializarMatrizBotones() {
 /*Muestra los movimientos validos de cada ficha*/
 private void resaltarMovimientos(String pieza, int fila, int columna) {
     
-    Color color_tablero = new Color(255, 255, 255); //tablero se pone en color blanco
-    
-    for (int f = 0; f < 8; f++) { //Pone en blanco todos los botones
-        for (int c = 0; c < 8; c++) {
-            matrizBotones[f][c].setBackground(color_tablero);
+    Color color1 = Color.WHITE; // Color de la primera casilla
+Color color2 = Color.BLACK; // Color de la segunda casilla
+
+for (int f = 0; f < 8; f++) {
+    for (int c = 0; c < 8; c++) {
+        // Omitir cambiar el color de A2
+        if (!(f == 0 && c == 1)) {
+            // Determina el color basado en la paridad de la suma de f y c
+            if ((f + c) % 2 == 0) {
+                matrizBotones[f][c].setBackground(color1); // Casilla de color 1
+            } else {
+                matrizBotones[f][c].setBackground(color2); // Casilla de color 2
+                B8.setBackground(Color.BLACK);
+            }
         }
     }
+}
     
     int[][] movimientos = new int[0][2]; //matriz para almacenar los movimientos posibles
     
      //De acuerdo a la pieza seleccionada valida sus movimientos
     switch(pieza) {
         case "Dama":
+            
             movimientos = dama_mov(new String[8][8], fila, columna);
             break;
-        case "Peon Blanco":
-            movimientos = peon_mov(new String[8][8], fila, columna, init, 0);
-       
-            break;
-        case "Peon Negro":
-            movimientos = peon_mov(new String[8][8], fila, columna, init, 1);
+        case "Peon":
+            movimientos = peon_mov(new String[8][8], fila, columna, false, 0);
             break;
         case "Caballo":
             movimientos = caballo_mov(new String[8][8], fila, columna);
             break;
         case "Alfil":
-            movimientos = alfil_mov(new String[8][8], fila, columna);
-            break;
+           if (alfilcheck) { // Si alfilcheck es true, mover el alfil blanco
+            movimientos = alfil_mov(new String[8][8], fila, columna, Color.WHITE, Color.WHITE);
+        } else { // Si alfilcheck es false, mover el alfil negro
+            movimientos = alfil_mov(new String[8][8], fila, columna, Color.WHITE, Color.BLACK);
+        }
+        break;
+        
         case "Rey":
             movimientos = rey_mov(new String[8][8], fila, columna);
             break;
@@ -398,15 +464,16 @@ private void resaltarMovimientos(String pieza, int fila, int columna) {
         // TODO add your handling code here:
     }//GEN-LAST:event_H8ActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        if(true){
-            init = true;
-        }else {
-            init = false;
-        }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    private void ChkBoxColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkBoxColorActionPerformed
+         // Obtiene el estado actual del JCheckBox
+    boolean seleccionado = ChkBoxColor.isSelected();
+    
+    // Actualiza la variable booleana según el estado del JCheckBox
+     alfilcheck = seleccionado;
+     peoncheck=seleccionado;
+    }//GEN-LAST:event_ChkBoxColorActionPerformed
 
-   public static int[][] alfil_mov(String[][] tablero, int fila, int columna) {
+  public static int[][] alfil_mov(String[][] tablero, int fila, int columna, Color colorCasilla, Color colorAlfil) {
     // Direcciones en las que puede moverse el alfil: diagonalmente en las cuatro direcciones
     int[][] direcciones = { { -1, -1 }, { -1, 1 }, { 1, -1 }, { 1, 1 } };
     
@@ -426,15 +493,25 @@ private void resaltarMovimientos(String pieza, int fila, int columna) {
             
             // Verifica si la nueva posición está dentro de los límites del tablero
             if (f >= 0 && f < 8 && c >= 0 && c < 8) {
-                // Si la casilla está vacía (null), es un movimiento válido
-                if (tablero[f][c] == null) {
-                    movimientos[count][0] = f;
-                    movimientos[count][1] = c;
-                    count++;
+                // Verificar si la casilla es del color adecuado para el alfil
+                boolean casillaValida = (f + c) % 2 == 0 ? colorAlfil.equals(Color.WHITE) : colorAlfil.equals(Color.BLACK);
+                
+                if (casillaValida) {
+                    // Si la casilla está vacía (null), es un movimiento válido
+                    if (tablero[f][c] == null) {
+                        movimientos[count][0] = f;
+                        movimientos[count][1] = c;
+                        count++;
+                    } else {
+
+                        break; // Si encuentra una pieza enemiga o aliada, se detiene en esa dirección
+                    }
                 } else {
-                    break; // Si encuentra una pieza enemiga o aliada, se detiene en esa dirección
+
+                    break; // Si la casilla no es del color correcto para el alfil, se detiene en esa dirección
                 }
             } else {
+
                 break; // Si se sale de los límites del tablero, se detiene en esa dirección
             }
         }
@@ -451,6 +528,7 @@ private void resaltarMovimientos(String pieza, int fila, int columna) {
     
     return movimientos_validos; // Devuelve la matriz de movimientos válidos del alfil
 }
+
 
 public static int[][] caballo_mov(String[][] tablero, int fila, int columna) {
     // Direcciones de los saltos posibles del caballo
@@ -657,69 +735,66 @@ public static int[][] caballo_mov(String[][] tablero, int fila, int columna) {
     return movimientos_validos; // Devuelve la matriz de movimientos válidos del rey
 }
 
- public static class MovimientoPeon {
-    public int[][] movimientos;
-    public boolean init;
 
-    public MovimientoPeon(int[][] movimientos, boolean init) {
-        this.movimientos = movimientos;
-        this.init = init;
-    }
-}
-
-public static MovimientoPeon peon_mov(String[][] tablero, int row, int col, boolean init, int C_ficha) {
+public static int[][] peon_mov(String[][] tablero, int row, int col ,boolean init, int C_ficha) {
+    // Definir las direcciones posibles para un peón (una hacia arriba y otra hacia abajo)
     int[][] direcciones = { { -1, 0 }, { 1, 0 } };
+    // Arreglo para almacenar los movimientos posibles
     int[][] movimientos = new int[64][2];
     int count = 0;
+    int inicio_f = 0;
 
     int fila = row;
     int columna = col;
+    int cont=0;
 
+    // Asegurarse de que C_ficha es un índice válido
     if (C_ficha < 0 || C_ficha >= direcciones.length) {
         throw new IllegalArgumentException("C_ficha debe ser 0 o 1");
     }
 
+    // Obtener la dirección basada en el valor de C_ficha
     int[] direccion = direcciones[C_ficha];
 
-    if (init) {
-        for (int i = 0; i < 2; i++) {
-            fila += direccion[0];
-            columna += direccion[1];
+    while (true) {
+        fila += direccion[0];
+        columna += direccion[1];
 
-            if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
-                if (tablero[fila][columna] == null) {
-                    movimientos[count][0] = fila;
-                    movimientos[count][1] = columna;
-                    count++;
+        // Verificar si la nueva posición está dentro del tablero
+        if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
+            // Verificar si la posición está vacía
+            if (tablero[fila][columna] == null) {
+                movimientos[count][0] = fila;
+                movimientos[count][1] = columna;
+                count++;
+
+                // Si es el movimiento inicial y no ha excedido los dos movimientos iniciales
+                if (init && inicio_f < 1) {
+                    inicio_f++;
                 } else {
                     break;
                 }
             } else {
                 break;
             }
-        }
-        init = false; // Cambiar el estado de init después del primer movimiento
-    } else {
-        fila += direccion[0];
-        columna += direccion[1];
-
-        if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
-            if (tablero[fila][columna] == null) {
-                movimientos[count][0] = fila;
-                movimientos[count][1] = columna;
-                count++;
-            }
+        } else {
+            break;
         }
     }
 
+    // Crear un arreglo ajustado al número de movimientos encontrados
     int[][] movimientos_v = new int[count][2];
     for (int i = 0; i < count; i++) {
         movimientos_v[i][0] = movimientos[i][0];
         movimientos_v[i][1] = movimientos[i][1];
     }
 
-    return new MovimientoPeon(movimientos_v, init);
+    return movimientos_v;
 }
+
+
+
+
 
     
     /**
@@ -760,11 +835,23 @@ public static MovimientoPeon peon_mov(String[][] tablero, int row, int col, bool
         });
     }
     private void resetearBotones() {
-    for (int fila = 0; fila < 8; fila++) {
-        for (int columna = 0; columna < 8; columna++) {
-            matrizBotones[fila][columna].setBackground(Color.WHITE);
+        Color color1 = Color.WHITE; // Color de la primera casilla
+Color color2 = Color.BLACK; // Color de la segunda casilla
+
+for (int f = 0; f < 8; f++) {
+    for (int c = 0; c < 8; c++) {
+        // Omitir cambiar el color de A2
+        if (!(f == 0 && c == 1)) {
+            // Determina el color basado en la paridad de la suma de f y c
+            if ((f + c) % 2 == 0) {
+                matrizBotones[f][c].setBackground(color1); // Casilla de color 1
+            } else {
+                matrizBotones[f][c].setBackground(color2); // Casilla de color 2
+                B8.setBackground(Color.BLACK);
+            }
         }
     }
+}
 }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -792,6 +879,7 @@ public static MovimientoPeon peon_mov(String[][] tablero, int row, int col, bool
     private javax.swing.JButton C6;
     private javax.swing.JButton C7;
     private javax.swing.JButton C8;
+    private javax.swing.JCheckBox ChkBoxColor;
     private javax.swing.JButton D1;
     private javax.swing.JButton D2;
     private javax.swing.JButton D3;
@@ -835,6 +923,6 @@ public static MovimientoPeon peon_mov(String[][] tablero, int row, int col, bool
     private javax.swing.JButton H8;
     private javax.swing.JPanel Tablero;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
