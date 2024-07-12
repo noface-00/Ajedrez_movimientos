@@ -14,7 +14,7 @@ public class Ajedrez {
         int alfil_col = 2;
 
         tablero[alfil_row][alfil_col] = "T";
-        int[][] movimientos_alfil = caballo_mov(tablero, alfil_row, alfil_col);
+        int[][] movimientos_alfil = peon_mov(tablero, alfil_row, alfil_col, true,0);
 
         for (int[] movimiento : movimientos_alfil) {
             int fila = movimiento[0];
@@ -203,37 +203,62 @@ public class Ajedrez {
         return movimientos_v;
     }
 
-    public static int[][] peon_mov(String[][] tablero, int row, int col) {
+public static int[][] peon_mov(String[][] tablero, int row, int col ,boolean init, int C_ficha) {
+    // Definir las direcciones posibles para un peón (una hacia arriba y otra hacia abajo)
+    int[][] direcciones = { { -1, 0 }, { 1, 0 } };
+    // Arreglo para almacenar los movimientos posibles
+    int[][] movimientos = new int[64][2];
+    int count = 0;
+    int inicio_f = 0;
 
-        int[][] movimientos = new int[64][2];
-        int count = 0;
+    int fila = row;
+    int columna = col;
+    int cont=0;
 
-        int fila = row;
-        int columna = col;
+    // Asegurarse de que C_ficha es un índice válido
+    if (C_ficha < 0 || C_ficha >= direcciones.length) {
+        throw new IllegalArgumentException("C_ficha debe ser 0 o 1");
+    }
 
-        while (true) {
-            fila += -1;
-            columna += 0;
-            if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
-                if (tablero[fila][columna] == null) {
-                    movimientos[count][0] = fila;
-                    movimientos[count][1] = columna;
-                    count++;
-                    break;
+    // Obtener la dirección basada en el valor de C_ficha
+    int[] direccion = direcciones[C_ficha];
+
+    while (true) {
+        fila += direccion[0];
+        columna += direccion[1];
+
+        // Verificar si la nueva posición está dentro del tablero
+        if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
+            // Verificar si la posición está vacía
+            if (tablero[fila][columna] == null) {
+                movimientos[count][0] = fila;
+                movimientos[count][1] = columna;
+                count++;
+
+                // Si es el movimiento inicial y no ha excedido los dos movimientos iniciales
+                if (init && inicio_f < 1) {
+                    inicio_f++;
                 } else {
                     break;
                 }
             } else {
                 break;
             }
+        } else {
+            break;
         }
-        int[][] movimientos_v = new int[count][2];
-        for (int i = 0; i < count; i++) {
-            movimientos_v[i][0] = movimientos[i][0];
-            movimientos_v[i][1] = movimientos[i][1];
-        }
-        return movimientos_v;
     }
+
+    // Crear un arreglo ajustado al número de movimientos encontrados
+    int[][] movimientos_v = new int[count][2];
+    for (int i = 0; i < count; i++) {
+        movimientos_v[i][0] = movimientos[i][0];
+        movimientos_v[i][1] = movimientos[i][1];
+    }
+
+    return movimientos_v;
+}
+
 
     public static void imprimirTablero(String[][] tablero) {
         for (int i = 0; i < tablero.length; i++) {

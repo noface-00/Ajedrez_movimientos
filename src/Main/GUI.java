@@ -16,6 +16,8 @@ import javax.swing.*;
  */
 public class GUI extends javax.swing.JFrame {
     static JButton[][] matrizBotones;
+    private boolean init;
+    
     
     /**
      * Creates new form GUI
@@ -101,6 +103,7 @@ public class GUI extends javax.swing.JFrame {
         F1 = new javax.swing.JButton();
         G1 = new javax.swing.JButton();
         H1 = new javax.swing.JButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -108,7 +111,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
 
-        Fichas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Dama", "Rey", "Torre", "Alfil", "Caballo", "Peon" }));
+        Fichas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Dama", "Rey", "Torre", "Alfil", "Caballo", "Peon Blanco", "Peon Negro" }));
         Fichas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FichasActionPerformed(evt);
@@ -215,6 +218,14 @@ public class GUI extends javax.swing.JFrame {
         Tablero.add(H1);
 
         getContentPane().add(Tablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 440, 410));
+
+        jToggleButton1.setText("jToggleButton1");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -336,8 +347,12 @@ private void resaltarMovimientos(String pieza, int fila, int columna) {
         case "Dama":
             movimientos = dama_mov(new String[8][8], fila, columna);
             break;
-        case "Peon":
-            movimientos = peon_mov(new String[8][8], fila, columna);
+        case "Peon Blanco":
+            movimientos = peon_mov(new String[8][8], fila, columna, init, 0);
+       
+            break;
+        case "Peon Negro":
+            movimientos = peon_mov(new String[8][8], fila, columna, init, 1);
             break;
         case "Caballo":
             movimientos = caballo_mov(new String[8][8], fila, columna);
@@ -382,6 +397,14 @@ private void resaltarMovimientos(String pieza, int fila, int columna) {
     private void H8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_H8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_H8ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        if(true){
+            init = true;
+        }else {
+            init = false;
+        }
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
    public static int[][] alfil_mov(String[][] tablero, int fila, int columna) {
     // Direcciones en las que puede moverse el alfil: diagonalmente en las cuatro direcciones
@@ -634,49 +657,70 @@ public static int[][] caballo_mov(String[][] tablero, int fila, int columna) {
     return movimientos_validos; // Devuelve la matriz de movimientos válidos del rey
 }
 
-    public static int[][] peon_mov(String[][] tablero, int fila, int columna) {
-    // Matriz para almacenar todos los posibles movimientos del peón, inicialmente con capacidad máxima
-    int[][] movimientos = new int[64][2];
-    int count = 0; // Contador de movimientos válidos
+ public static class MovimientoPeon {
+    public int[][] movimientos;
+    public boolean init;
 
-    // Mueve el peón una casilla hacia adelante (hacia arriba en la matriz, dependiendo de la implementación)
-    fila += -1;
-    columna += 0;
-
-    // Verifica si la nueva posición está dentro de los límites del tablero y es una casilla vacía
-    if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
-        if (tablero[fila][columna] == null) {
-            // Almacena el movimiento válido en la matriz de movimientos
-            movimientos[count][0] = fila;
-            movimientos[count][1] = columna;
-            count++;
-        }
+    public MovimientoPeon(int[][] movimientos, boolean init) {
+        this.movimientos = movimientos;
+        this.init = init;
     }
-
-    // Crea una matriz de movimientos válidos con el tamaño exacto necesario
-    int[][] movimientos_validos = new int[count][2];
-
-    // Copia los movimientos válidos encontrados al arreglo de tamaño exacto
-    for (int i = 0; i < count; i++) {
-        movimientos_validos[i][0] = movimientos[i][0];
-        movimientos_validos[i][1] = movimientos[i][1];
-    }
-
-    return movimientos_validos; // Devuelve la matriz de movimientos válidos del peón
 }
 
-    public static void imprimirTablero(String[][] tablero) {
-    for (int i = 0; i < tablero.length; i++) {
-        for (int j = 0; j < tablero[i].length; j++) {
-            if (tablero[i][j] == null) {
-                System.out.print(". "); // Imprime un punto para casillas vacías
+public static MovimientoPeon peon_mov(String[][] tablero, int row, int col, boolean init, int C_ficha) {
+    int[][] direcciones = { { -1, 0 }, { 1, 0 } };
+    int[][] movimientos = new int[64][2];
+    int count = 0;
+
+    int fila = row;
+    int columna = col;
+
+    if (C_ficha < 0 || C_ficha >= direcciones.length) {
+        throw new IllegalArgumentException("C_ficha debe ser 0 o 1");
+    }
+
+    int[] direccion = direcciones[C_ficha];
+
+    if (init) {
+        for (int i = 0; i < 2; i++) {
+            fila += direccion[0];
+            columna += direccion[1];
+
+            if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
+                if (tablero[fila][columna] == null) {
+                    movimientos[count][0] = fila;
+                    movimientos[count][1] = columna;
+                    count++;
+                } else {
+                    break;
+                }
             } else {
-                System.out.print(tablero[i][j] + " "); // Imprime el contenido de la casilla
+                break;
             }
         }
-        System.out.println(); // Salto de línea al final de cada fila del tablero
+        init = false; // Cambiar el estado de init después del primer movimiento
+    } else {
+        fila += direccion[0];
+        columna += direccion[1];
+
+        if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
+            if (tablero[fila][columna] == null) {
+                movimientos[count][0] = fila;
+                movimientos[count][1] = columna;
+                count++;
+            }
+        }
     }
+
+    int[][] movimientos_v = new int[count][2];
+    for (int i = 0; i < count; i++) {
+        movimientos_v[i][0] = movimientos[i][0];
+        movimientos_v[i][1] = movimientos[i][1];
+    }
+
+    return new MovimientoPeon(movimientos_v, init);
 }
+
     
     /**
      * @param args the command line arguments
@@ -791,5 +835,6 @@ public static int[][] caballo_mov(String[][] tablero, int fila, int columna) {
     private javax.swing.JButton H8;
     private javax.swing.JPanel Tablero;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
