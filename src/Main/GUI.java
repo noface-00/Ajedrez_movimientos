@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Main;
 
 import java.awt.*;
@@ -18,7 +15,9 @@ public class GUI extends javax.swing.JFrame {
     static JButton[][] matrizBotones;
     boolean peoncheck=false;
     boolean alfilcheck=false;
-    
+    private boolean peon_2mov = true;
+    private int click = 0;
+    private String[] posiciones = {"A", "B", "C", "D", "E", "F", "G"};
     /**
      * Creates new form GUI
      */
@@ -53,6 +52,7 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
         Tablero = new javax.swing.JPanel();
         A8 = new javax.swing.JButton();
         B8 = new javax.swing.JButton();
@@ -118,14 +118,36 @@ public class GUI extends javax.swing.JFrame {
         F1 = new javax.swing.JButton();
         G1 = new javax.swing.JButton();
         H1 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         Fichas = new javax.swing.JComboBox<>();
         ChkBoxColor = new javax.swing.JCheckBox();
+        estado = new javax.swing.JLabel();
+        color = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAutoRequestFocus(false);
+        setBackground(new java.awt.Color(255, 128, 36));
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(255, 128, 36));
 
         Tablero.setLayout(new java.awt.GridLayout(8, 8));
         Tablero.add(A8);
@@ -223,62 +245,249 @@ public class GUI extends javax.swing.JFrame {
         Tablero.add(G1);
         Tablero.add(H1);
 
-        getContentPane().add(Tablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 410));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("G");
 
-        jPanel1.setBackground(new java.awt.Color(255, 128, 36));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("D");
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic", 2, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("E");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("F");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("E");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("C");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("6");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("B");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("A");
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("8");
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("4");
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("7");
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("3");
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("5");
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("1");
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("2");
+
+        jLabel1.setFont(new java.awt.Font("Roboto Black", 3, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Piezas de ajedrez");
 
+        jLabel18.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("Movimientos de Ajedrez");
+
         Fichas.setBackground(new java.awt.Color(255, 153, 102));
-        Fichas.setFont(new java.awt.Font("Yu Gothic Medium", 1, 12)); // NOI18N
-        Fichas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Peon ", "Alfil", "Caballo", "Torre", "Dama", "Rey", " ", " " }));
+        Fichas.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Fichas.setForeground(new java.awt.Color(255, 255, 255));
+        Fichas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Peon", "Alfil", "Caballo", "Torre", "Dama", "Rey", " ", " " }));
         Fichas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FichasActionPerformed(evt);
             }
         });
 
-        ChkBoxColor.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
+        ChkBoxColor.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        ChkBoxColor.setForeground(new java.awt.Color(255, 255, 255));
         ChkBoxColor.setText("Cambiar color");
+        ChkBoxColor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ChkBoxColorMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ChkBoxColorMousePressed(evt);
+            }
+        });
         ChkBoxColor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ChkBoxColorActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Fichas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ChkBoxColor, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 40, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+        estado.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        estado.setForeground(new java.awt.Color(255, 255, 255));
+        estado.setText("Ficha sin seleccionar");
+
+        color.setBackground(new java.awt.Color(255, 255, 255));
+        color.setForeground(new java.awt.Color(255, 255, 255));
+        color.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        color.setBorderPainted(false);
+
+        jLabel19.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel19.setText("Hecho Por: Santiago Marquez y Kevin Mora");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Fichas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(ChkBoxColor, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(66, 66, 66)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Fichas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(ChkBoxColor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(estado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(50, 50, 50))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, 0)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, 0)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, 0)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, 0)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, Short.MAX_VALUE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, 0)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, 0)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Tablero, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
+                        .addComponent(Fichas, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ChkBoxColor, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(color, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50)
+                        .addComponent(estado, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(100, 100, 100))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 220, 410));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -376,7 +585,8 @@ private void inicializarMatrizBotones() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     System.out.println("Boton en fila " + f + ", columna " + c + " fue pulsado.");
-                    String pieza = (String) Fichas.getSelectedItem(); // Obtiene el tipo de pieza seleccionada
+                    matrizBotones[f][c].setBackground(Color.red);
+                    String pieza = ((String) Fichas.getSelectedItem()); // Obtiene el tipo de pieza seleccionada
                     resaltarMovimientos(pieza, f, c); // Resalta los movimientos posibles para esa pieza en esa posición
                 }
             });
@@ -385,21 +595,21 @@ private void inicializarMatrizBotones() {
 }
 /*Muestra los movimientos validos de cada ficha*/
 private void resaltarMovimientos(String pieza, int fila, int columna) {
-    
     Color color1 = Color.WHITE; // Color de la primera casilla
 Color color2 = Color.BLACK; // Color de la segunda casilla
 
 for (int f = 0; f < 8; f++) {
     for (int c = 0; c < 8; c++) {
         // Omitir cambiar el color de A2
-        if (!(f == 0 && c == 1)) {
+        if (!(f == fila && c == columna)) {
             // Determina el color basado en la paridad de la suma de f y c
             if ((f + c) % 2 == 0) {
                 matrizBotones[f][c].setBackground(color1); // Casilla de color 1
             } else {
                 matrizBotones[f][c].setBackground(color2); // Casilla de color 2
-                B8.setBackground(Color.BLACK);
             }
+            revalidate();
+            repaint();
         }
     }
 }
@@ -409,22 +619,28 @@ for (int f = 0; f < 8; f++) {
      //De acuerdo a la pieza seleccionada valida sus movimientos
     switch(pieza) {
         case "Dama":
-            
             movimientos = dama_mov(new String[8][8], fila, columna);
+            
             break;
         case "Peon":
-            movimientos = peon_mov(new String[8][8], fila, columna, false, 0);
+            if(click < 1) {
+                peon_2mov = true;
+                click++;
+            }else{
+                peon_2mov = false;
+            }
+            movimientos = peon_mov(new String[8][8], fila, columna, peon_2mov, peoncheck ? 0 : 1);
             break;
         case "Caballo":
             movimientos = caballo_mov(new String[8][8], fila, columna);
             break;
         case "Alfil":
-           if (alfilcheck) { // Si alfilcheck es true, mover el alfil blanco
-            movimientos = alfil_mov(new String[8][8], fila, columna, Color.WHITE, Color.WHITE);
-        } else { // Si alfilcheck es false, mover el alfil negro
-            movimientos = alfil_mov(new String[8][8], fila, columna, Color.WHITE, Color.BLACK);
-        }
-        break;
+            if (alfilcheck) { // Si alfilcheck es true, mover el alfil blanco
+                movimientos = alfil_mov(new String[8][8], fila, columna, Color.WHITE, Color.WHITE);
+            }else { // Si alfilcheck es false, mover el alfil negro
+                movimientos = alfil_mov(new String[8][8], fila, columna, Color.WHITE, Color.BLACK);
+            }
+            break;
         
         case "Rey":
             movimientos = rey_mov(new String[8][8], fila, columna);
@@ -432,11 +648,17 @@ for (int f = 0; f < 8; f++) {
         case "Torre":
             movimientos = torre_mov(new String[8][8], fila, columna);
             break;
+        default:
+            resetearBotones();
+            break;
+            
     }
+    estado.setText(pieza + "en la posicion: " + posiciones[columna]+ String.valueOf(8 - fila));
+    
     
      //Muestra los movimientos pintando en verde los botones disponibles
     for (int[] movimiento : movimientos) {
-        matrizBotones[movimiento[0]][movimiento[1]].setBackground(Color.GREEN);
+        matrizBotones[movimiento[0]][movimiento[1]].setBackground(new Color(0,255,0,10));
     }
 }
 
@@ -467,11 +689,25 @@ for (int f = 0; f < 8; f++) {
     private void ChkBoxColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkBoxColorActionPerformed
          // Obtiene el estado actual del JCheckBox
     boolean seleccionado = ChkBoxColor.isSelected();
-    
+    click = 0;
     // Actualiza la variable booleana según el estado del JCheckBox
      alfilcheck = seleccionado;
-     peoncheck=seleccionado;
+     peoncheck= seleccionado;
+     if (seleccionado){
+         color.setBackground(Color.BLACK);
+     }else{
+         color.setBackground(Color.WHITE);
+     }
+     resetearBotones();
     }//GEN-LAST:event_ChkBoxColorActionPerformed
+
+    private void ChkBoxColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChkBoxColorMouseClicked
+
+    }//GEN-LAST:event_ChkBoxColorMouseClicked
+
+    private void ChkBoxColorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChkBoxColorMousePressed
+
+    }//GEN-LAST:event_ChkBoxColorMousePressed
 
   public static int[][] alfil_mov(String[][] tablero, int fila, int columna, Color colorCasilla, Color colorAlfil) {
     // Direcciones en las que puede moverse el alfil: diagonalmente en las cuatro direcciones
@@ -736,66 +972,37 @@ public static int[][] caballo_mov(String[][] tablero, int fila, int columna) {
 }
 
 
-public static int[][] peon_mov(String[][] tablero, int row, int col ,boolean init, int C_ficha) {
-    // Definir las direcciones posibles para un peón (una hacia arriba y otra hacia abajo)
-    int[][] direcciones = { { -1, 0 }, { 1, 0 } };
-    // Arreglo para almacenar los movimientos posibles
-    int[][] movimientos = new int[64][2];
+public static int[][] peon_mov(String[][] tablero, int row, int col, boolean init, int C_ficha) {
+    // Direcciones de movimiento para un peón (avanzar hacia arriba o hacia abajo)
+    int[][] direcciones = { {-1, 0}, {1, 0} };
+    int[][] movimientos = new int[4][2]; // Espacio suficiente para almacenar hasta 4 movimientos posibles (doble avance inicial y captura)
     int count = 0;
-    int inicio_f = 0;
 
-    int fila = row;
-    int columna = col;
-    int cont=0;
-
-    // Asegurarse de que C_ficha es un índice válido
-    if (C_ficha < 0 || C_ficha >= direcciones.length) {
-        throw new IllegalArgumentException("C_ficha debe ser 0 o 1");
-    }
-
-    // Obtener la dirección basada en el valor de C_ficha
     int[] direccion = direcciones[C_ficha];
 
-    while (true) {
-        fila += direccion[0];
-        columna += direccion[1];
-
-        // Verificar si la nueva posición está dentro del tablero
-        if (fila >= 0 && fila < 8 && columna >= 0 && columna < 8) {
-            // Verificar si la posición está vacía
-            if (tablero[fila][columna] == null) {
-                movimientos[count][0] = fila;
-                movimientos[count][1] = columna;
-                count++;
-
-                // Si es el movimiento inicial y no ha excedido los dos movimientos iniciales
-                if (init && inicio_f < 1) {
-                    inicio_f++;
-                } else {
-                    break;
-                }
-            } else {
-                break;
-            }
-        } else {
-            break;
+    // Movimiento inicial de dos casillas hacia adelante
+    if (init) {
+        int fila_doble = row + 2 * direccion[0];
+        if (fila_doble >= 0 && fila_doble < 8 && tablero[fila_doble][col] == null) {
+            movimientos[count][0] = fila_doble;
+            movimientos[count][1] = col;
+            count++;
         }
+    }
+
+    // Movimiento normal de una casilla hacia adelante
+    int fila_simple = row + direccion[0];
+    if (fila_simple >= 0 && fila_simple < 8 && tablero[fila_simple][col] == null) {
+        movimientos[count][0] = fila_simple;
+        movimientos[count][1] = col;
+        count++;
     }
 
     // Crear un arreglo ajustado al número de movimientos encontrados
     int[][] movimientos_v = new int[count][2];
-    for (int i = 0; i < count; i++) {
-        movimientos_v[i][0] = movimientos[i][0];
-        movimientos_v[i][1] = movimientos[i][1];
-    }
-
+    System.arraycopy(movimientos, 0, movimientos_v, 0, count);
     return movimientos_v;
 }
-
-
-
-
-
     
     /**
      * @param args the command line arguments
@@ -922,7 +1129,27 @@ for (int f = 0; f < 8; f++) {
     private javax.swing.JButton H7;
     private javax.swing.JButton H8;
     private javax.swing.JPanel Tablero;
+    private javax.swing.JButton color;
+    private javax.swing.JLabel estado;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
